@@ -2,23 +2,22 @@
 addEventListener('DOMContentLoaded', () => {
     domObjs = {
         title: document.querySelector('h1#title'),
-        release: document.querySelector('#release'),
-        director: document.querySelector('#director'),
-        producer: document.querySelector('#producer'),
+        release: document.querySelector('h4#release'),
+        director: document.querySelector('h4#director'),
+        producer: document.querySelector('h4#producer'),
         characterSpan: document.querySelector('span#character'),
         characterUl: document.querySelector('ul#charList')
     }
     const sp = new URLSearchParams(window.location.search)
     const id = sp.get('id')
-    title.textContent = 'aa';
     fetchAllData(id, domObjs);
   });
 
-const fetchAllData = async (filmId) => {
+const fetchAllData = async (filmId, domObjs) => {
     try {
         let filmData = await fetchFilm(filmId);
         let charactersData = await fetchCharacters(filmId);
-        renderFilm(filmData, charactersData);
+        renderFilm(filmData, charactersData, domObjs);
     } catch (err) {
         throw err
     }
@@ -47,7 +46,7 @@ const fetchCharacters = async (filmId) => {
 }
 
 const renderFilm = (film, characters, domObjs) => {
-    console.log(film.title);
+    console.log(domObjs);
     document.title = `SWAPI - ${film.title}`;  // Just to make the browser tab say their name
     domObjs.title.textContent = film.title;
     domObjs.release.textContent = `Release date: ${film.release_date}`;
