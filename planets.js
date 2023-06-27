@@ -67,7 +67,7 @@ const renderPlanet = planet => {
   rotationPeriodSpan.textContent = planet?.rotation_period;
   surfaceWaterSpan.textContent = planet?.surface_water;
   const charactersLis = planet?.characters?.map(character => `<li><a href="/character.html?id=${character.id}">${character.name}</li>`)
-  const filmsLis = planet?.films?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
+  const filmsLis = planet?.films?.map(film => `<li><a href="/films.html?id=${film.id}">${film.title}</li>`)
   charactersUl.innerHTML = charactersLis.join("");
   filmsUl.innerHTML = filmsLis.join("");
 }
