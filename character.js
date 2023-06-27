@@ -6,7 +6,6 @@ let filmsDiv;
 let planetDiv;
 const baseUrl = `https://swapi2.azurewebsites.net/api`;
 
-// Runs on page load
 addEventListener('DOMContentLoaded', () => {
   nameH1 = document.querySelector('h1#name');
   birthYearSpan = document.querySelector('span#birth_year');
