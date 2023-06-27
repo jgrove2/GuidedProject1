@@ -2,9 +2,9 @@
 addEventListener('DOMContentLoaded', () => {
     domObjs = {
         title: document.querySelector('h1#title'),
-        release: document.querySelector('h4#release'),
-        director: document.querySelector('h4#director'),
-        producer: document.querySelector('h4#producer'),
+        release: document.querySelector('p#release'),
+        director: document.querySelector('p#director'),
+        producer: document.querySelector('p#producer'),
         characterSpan: document.querySelector('span#character'),
         characterUl: document.querySelector('ul#charList')
     }
